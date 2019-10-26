@@ -1,0 +1,29 @@
+{
+  "name": "sdhacks19",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@fitbit/sdk": "~3.1.3",
+    "@fitbit/sdk-cli": "^1.7.0"
+  },
+  "fitbit": {
+    "appUUID": "86a7b084-c73c-4f95-9251-f3a63387c8dd",
+    "appType": "app",
+    "appDisplayName": "SDHacks19",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "#ffffff",
+    "requestedPermissions": [],
+    "buildTargets": [
+      "higgs",
+      "meson",
+      "gemini"
+    ],
+    "i18n": {},
+    "defaultLanguage": "en-US"
+  },
+  "scripts": {
+    "build": "fitbit-build",
+    "debug": "fitbit"
+  }
+}
