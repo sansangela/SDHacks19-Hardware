@@ -2,8 +2,8 @@ console.log('Hello world!');
 
 import clock from "clock";
 import document from "document";
-// Import the messaging module
 import * as messaging from "messaging";
+import { geolocation } from "geolocation";
 
 // CLOCK
 // Update the clock every second
@@ -45,9 +45,24 @@ function updateClock() {
 // Update the clock every tick event
 clock.ontick = () => updateClock();
 
+
 // MESSAGEÍ
 // Listen for the onmessage event
 messaging.peerSocket.onmessage = function(evt) {
   // Output the message to the console
   console.log(JSON.stringify(evt.data));
+}
+
+
+// GEOLOCATION
+geolocation.getCurrentPosition(locationSuccess, locationError);
+
+function locationSuccess(position) {
+    console.log("Latitude: " + position.coords.latitude,
+                "Longitude: " + position.coords.longitude);
+}
+
+function locationError(error) {
+  console.log("Error: " + error.code,
+              "Message: " + error.message);
 }
