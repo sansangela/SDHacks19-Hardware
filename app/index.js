@@ -6,15 +6,44 @@ import document from "document";
 import * as messaging from "messaging";
 
 // CLOCK
-let myClock = document.getElementById("myClock");
+// Update the clock every second
+clock.granularity = "seconds";
 
-clock.granularity = 'seconds'; // seconds, minutes, hours
+let hourHand = document.getElementById("hours");
+let minHand = document.getElementById("mins");
+let secHand = document.getElementById("secs");
 
-clock.ontick = function(evt) {
-  myClock.text = ("0" + evt.date.getHours()).slice(-2) + ":" +
-                      ("0" + evt.date.getMinutes()).slice(-2) + ":" +
-                      ("0" + evt.date.getSeconds()).slice(-2);
-};
+// Returns an angle (0-360) for the current hour in the day, including minutes
+function hoursToAngle(hours, minutes) {
+  let hourAngle = (360 / 12) * hours;
+  let minAngle = (360 / 12 / 60) * minutes;
+  return hourAngle + minAngle;
+}
+
+// Returns an angle (0-360) for minutes
+function minutesToAngle(minutes) {
+  return (360 / 60) * minutes;
+}
+
+// Returns an angle (0-360) for seconds
+function secondsToAngle(seconds) {
+  return (360 / 60) * seconds;
+}
+
+// Rotate the hands every tick
+function updateClock() {
+  let today = new Date();
+  let hours = today.getHours() % 12;
+  let mins = today.getMinutes();
+  let secs = today.getSeconds();
+
+  hourHand.groupTransform.rotate.angle = hoursToAngle(hours, mins);
+  minHand.groupTransform.rotate.angle = minutesToAngle(mins);
+  secHand.groupTransform.rotate.angle = secondsToAngle(secs);
+}
+
+// Update the clock every tick event
+clock.ontick = () => updateClock();
 
 // MESSAGEÍ
 // Listen for the onmessage event
