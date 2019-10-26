@@ -55,7 +55,19 @@ messaging.peerSocket.onmessage = function(evt) {
 
 
 // GEOLOCATION
-geolocation.getCurrentPosition(locationSuccess, locationError);
+// geolocation.getCurrentPosition(locationSuccess, locationError);
+
+// function locationSuccess(position) {
+//     console.log("Latitude: " + position.coords.latitude,
+//                 "Longitude: " + position.coords.longitude);
+// }
+
+// function locationError(error) {
+//   console.log("Error: " + error.code,
+//               "Message: " + error.message);
+// }
+
+var watchID = geolocation.watchPosition(locationSuccess, locationError);
 
 function locationSuccess(position) {
     console.log("Latitude: " + position.coords.latitude,
