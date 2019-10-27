@@ -10,6 +10,7 @@
   </g>
   <circle cx="50%" cy="50%" r="10" fill="#444444" /> -->
 
+  <image x="-15" y="-20" width="100" height="100" href="exponent.png"/>
   <textarea x="70" y="5" width="100%-10" fill="white"
   font-family="System-Regular" font-size="24">TextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextText
   </textarea>
