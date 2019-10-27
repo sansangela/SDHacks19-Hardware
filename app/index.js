@@ -46,7 +46,7 @@ function updateClock() {
 clock.ontick = () => updateClock();
 
 
-// MESSAGEÍ
+// MESSAGE
 // Listen for the onmessage event
 messaging.peerSocket.onmessage = function(evt) {
   // Output the message to the console
@@ -69,9 +69,22 @@ messaging.peerSocket.onmessage = function(evt) {
 
 var watchID = geolocation.watchPosition(locationSuccess, locationError);
 
+var inputx = []; // initialise an empty array
+var inputy = [];
+var isInDangerous = false;
+
 function locationSuccess(position) {
-    console.log("Latitude: " + position.coords.latitude,
-                "Longitude: " + position.coords.longitude);
+
+  // console.log("Latitude: " + position.coords.latitude,
+  //             "Longitude: " + position.coords.longitude);
+  
+  var tempx = position.coords.latitude, tempy = position.coords.longitude;
+  inputx.push(tempx);  // the array will dynamically grow
+  inputy.push(tempy);
+  console.log(tempx + "," + tempy);
+  if (((tempx*100-3277.9133333333334)^2+(tempy*100+11717.1645)^2) <= 5) {
+    console.log("*warning*");
+  }
 }
 
 function locationError(error) {
