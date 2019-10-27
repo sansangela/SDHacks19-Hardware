@@ -1,5 +1,5 @@
 <svg viewport-fill="#111111">
-  <g id="mins" pointer-events="visible" transform="translate(50%,50%)">
+<!--   <g id="mins" pointer-events="visible" transform="translate(50%,50%)">
     <rect x="$-4" y="-110" width="8" height="110" fill="#e0e0e0" />
   </g>
   <g id="hours" pointer-events="visible" transform="translate(50%,50%)">
@@ -8,5 +8,28 @@
   <g id="secs" pointer-events="visible" transform="translate(50%,50%)">
     <rect x="$-2" y="-120" width="4" height="120" fill="#ff0000" />
   </g>
-  <circle cx="50%" cy="50%" r="10" fill="#444444" />
+  <circle cx="50%" cy="50%" r="10" fill="#444444" /> -->
+
+  <textarea x="70" y="5" width="100%-10" fill="white"
+  font-family="System-Regular" font-size="24">TextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextTextText
+  </textarea>
+  
+  <textarea x="5" y="85" width="100%-10" fill="white"
+  font-family="System-Regular" font-size="24">TextTextTextTextTextTextTextTextTextTextText
+  </textarea>
+
+  
+  <use id="mybutton" href="#push-button" x ="0" y="200" width="120" height="50"
+  fill="fb-black" font-family="System-Regular" font-size="40">
+  <set href="#text" attributeName="text-buffer" to="<-Map" />
+  <set href="#text" attributeName="fill" to="fb-blue" />
+  <set href="#text" attributeName="y" to="12" />
+  </use>
+  
+  <use id="mybutton2" href="#push-button" x ="210" y="200" width="150" height="50"
+  fill="fb-black" font-family="System-Regular" font-size="30">
+  <set href="#text" attributeName="text-buffer" to="Dismiss" />
+  <set href="#text" attributeName="fill" to="fb-blue" />
+  <set href="#text" attributeName="y" to="12" />
+  </use>
 </svg>
