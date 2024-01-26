@@ -1,4 +1,4 @@
-# SD Hacks 2019: Watchtower Project
+# SD Hacks 2019: Watchtower Project (Hardware)
 More on Devpost: https://devpost.com/software/disease-transmission-simulator
 
 ## Inspiration
